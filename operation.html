@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>小学数学20以内加减法</title>
+  </head>
+  <body>
+    <h1>请选择你认为正确的答案！！！</h1>
+
+    <div>
+      <input id="opNum1" type="text" readonly />
+      <span id="op">+</span>
+      <input id="opNum2" type="text" readonly />
+    </div>
+    <div id="answer">
+      A.<input type="button" value="20" id="answerA" onclick="fun()"/> 
+      B.<input type="button" value="21" id="answerB" onclick="fun()"/>
+      C.<input type="button" value="22" id="answerC" onclick="fun()"/>
+      D.<input type="button" value="23" id="answerD" onclick="fun1()"/>
+    </div>
+
+    <script>
+      var opNum1 = parseInt(20 * Math.random());
+      var opNum2 = parseInt(20 * Math.random());
+
+      var a = document.getElementById("answerA");
+      var b = document.getElementById("answerB");
+      var c = document.getElementById("answerC");
+      var d = document.getElementById("answerD");
+
+      var op1 = document.getElementById("opNum1");
+      op1.value = opNum1;
+      var op2 = document.getElementById("opNum2");
+      op2.value = opNum2;
+      
+      a.value=parseInt(30*Math.random());
+      b.value=parseInt(30*Math.random());
+      c.value=parseInt(30*Math.random());
+      d.value=(opNum1+opNum2);
+      
+      function fun(){
+        alert("你答错了！！！");
+      }
+      function fun1(){
+        alert("恭喜你。你答对了！！！");
+      }
+
+    </script>
+  </body>
+</html>
