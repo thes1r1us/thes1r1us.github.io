@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <style>
+      body{
+        margin: 0;
+        cursor: pointer;
+      }
+      div {
+        width: 150px;
+        height: 150px;
+        margin: 0;
+        padding: 0;
+        color: lightcoral;
+        box-sizing: border-box;
+        border: 1px solid lightgoldenrodyellow;
+        border-radius: 50%;
+        display: inline-block;
+        text-align: center;
+        text-shadow: 1px 1px lightgray;
+        background-color: rgba(100, 100, 100, 0.1);
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      const NUMS = 8;
+      var a=[];
+      for (var i = 0; i < 100; i++) {
+        var divDom = document.createElement("div");
+        divDom.textContent="绝代有佳人,幽居在空谷。自云良家子,零落依草木。";   
+        divRandomPositon(divDom);
+        document.body.appendChild(divDom);
+        a.push(divDom);
+      }
+      document.body.onmousemove = document.body.ontouchmove = function () {
+        for(let b of a){
+          divRandomPositon(b);
+        }
+      }
+        function divRandomPositon(dom){
+        var bodyWidth = window.innerWidth;
+        var bodyHeight = window.innerHeight;
+        dom.style.marginLeft=Math.floor(Math.random()*bodyWidth)+"px";
+        dom.style.marginTop=Math.floor(Math.random()*bodyHeight)+"px";
+    }
+    </script>
+  </body>
+</html>
